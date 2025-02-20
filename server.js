@@ -1,9 +1,9 @@
 
 const express = require("express");
-const accountsRoutes = require("./routes/routes");
+const accountsRoutes = require("./src/accounts/routes");
 
 const app = express();
-const port = 5001;
+const port = 5002;
 
 app.use (express.json());
 const cors = require("cors");

@@ -3,7 +3,7 @@ const express = require("express");
 const accountsRoutes = require("./src/accounts/routes");
 
 const app = express();
-const port = 5002;
+const port = 5004;
 
 app.use (express.json());
 const cors = require("cors");
@@ -17,4 +17,4 @@ res.send("who will the super bowl??")
 
 app.use("/accounts", accountsRoutes);
 
-app.listen(port, () => console.log('running on ${port}'))
+app.listen(port, () => console.log(`running on ${port}`)) 

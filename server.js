@@ -1,20 +1,31 @@
-
 const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");  
 const accountsRoutes = require("./src/accounts/routes");
 
 const app = express();
-const port = 5004;
+const port = process.env.PORT || 5004;
 
-app.use (express.json());
-const cors = require("cors");
-app.use(cors({
-origin: '*'
-}));
 
-app.get("/", (req, res)=> {
-res.send("who will the super bowl??")
-})
+app.use(helmet());  
+app.disable("x-powered-by");  
+
+
+app.use(express.json());
+app.use(cors({ origin: '*' }));
+
+
+app.get("/", (req, res) => {
+    res.send("Welcome to the API! Use /accounts for account-related actions.");
+});
 
 app.use("/accounts", accountsRoutes);
 
-app.listen(port, () => console.log(`running on ${port}`)) 
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: "Something went wrong!" });
+});
+
+
+app.listen(port, () => console.log(`Server running on port ${port}`));

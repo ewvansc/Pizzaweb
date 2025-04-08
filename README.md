@@ -16,7 +16,7 @@ A modern, interactive pizza delivery website for **Galactic Pizza**, built with 
 - **CSS3** – Styling and layout  
 - **JavaScript** – Dynamic content and interactivity  
 - **APIs** – Fetching data (e.g., menu, order system)  
-- **Netlify/GitHub Pages** – (If deployed, add your hosting service here)  
+- **Netlify/GitHub Pages** –  
 
 ## 📦 Installation  
 

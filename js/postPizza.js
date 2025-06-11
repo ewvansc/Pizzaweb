@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5004/accounts/post";
+const API_URL = "https://pizzaweb.onrender.com/accounts";
 const formEl = document.querySelector('.form');
 
 formEl.addEventListener('submit', event => {

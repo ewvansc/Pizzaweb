@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5004/accounts/";
+const API_URL = "https://pizzaweb.onrender.com/accounts";
 
 fetch(API_URL)
 .then(response => response.json())

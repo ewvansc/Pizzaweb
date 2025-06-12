@@ -9,7 +9,7 @@ document.getElementById("pizza-form").addEventListener("submit", function (e) {
     type: formData.get("type")
   };
 
-  fetch("https://pizzaapp-jm2x.onrender.com/accounts", {
+  fetch("https://pizzaapp-jm2x.onrender.com/accounts/post", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

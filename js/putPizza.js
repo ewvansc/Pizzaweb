@@ -1,4 +1,4 @@
-const API_URL = "https://pizzaweb.onrender.com/accounts";
+const API_URL = "https://pizzaapp-jm2x.onrender.com/accounts/update/:id";
 
 function updatePizza(id, updatedData) {
     fetch(`${API_URL}${id}`, {

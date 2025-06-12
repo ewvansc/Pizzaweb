@@ -1,25 +1,31 @@
-const API_URL = "https://pizzaweb.onrender.com/accounts";
-const formEl = document.querySelector('.form');
+document.getElementById("pizza-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-formEl.addEventListener('submit', event => {
-    event.preventDefault();
-    const formData = new FormData(formEl);
-    const data = Object.fromEntries(formData)
+  const formData = new FormData(e.target);
+  const data = {
+    name: formData.get("name"),
+    city: formData.get("city"),
+    state: formData.get("state"),
+    type: formData.get("type")
+  };
 
-    //Validate that the fields have data results
-    if(data.name == "" || data.city =="" || data.state == "" || data.type == ""){
-     $.toaster({priority : 'danger', title: 'Error', message : 'Oops something broke'});
+  fetch("https://pizzaapp-jm2x.onrender.com/accounts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(res => {
+    if (res.ok) {
+      document.getElementById("result-msg").textContent = "Pizza order submitted!";
+      e.target.reset();
+    } else {
+      document.getElementById("result-msg").textContent = "Failed to submit pizza.";
     }
-    else {
-        fetch( API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then(res => res.json())
-        .then(data => console.log(data))
-        .then(error => console.log(error))
-        $.toaster({priority : 'success', title: 'Pizza Add', message : 'New Pizza Added to Library'});
-    }
+  })
+  .catch(err => {
+    console.error("Error submitting:", err);
+    document.getElementById("result-msg").textContent = "Something went wrong.";
+  });
 });

@@ -1,7 +1,7 @@
 fetch("https://pizzaapp-jm2x.onrender.com/accounts")
   .then(res => res.json())
   .then(data => {
-    const container = document.getElementById("pizza-grid");
+    const container = document.getElementById("grid-container");
 
     data.forEach(pizza => {
       const div = document.createElement("div");

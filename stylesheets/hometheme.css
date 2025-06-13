@@ -1,50 +1,62 @@
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 25px;
-    padding: 25px;
-    background-color: #dff7ed; 
-    color: #024731; 
-}
-
-#table-wrapper {
-    width: 92%;
-    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
 }
 
 
-h2 {
-    text-align: center;
-    color: #024731;
-    font-size: 28px;
-    margin-bottom: 30px;
+.navbar {
+    background: black;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
 }
 
-
-.gridjs-table {
-    width: 100%;
-    border: 2px solid #026c4d !important; 
-    border-collapse: collapse;
-    background-color: white;
-}
-
-
-.gridjs-th {
-    background-color: #6ebf8b !important; 
-    color: #ffffff !important;
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
     font-weight: bold;
-    padding: 12px;
-    text-align: left;
+    border-radius: 5px;
+    margin: 0 10px;
+    background: #007bff;
+    transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+    background: #0056b3;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 20px;
 }
 
 
-.gridjs-td {
-    border-bottom: 1px solid #b2e0c4 !important; 
-    padding: 10px;
-    font-size: 15px;
+.pizza-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    text-align: center;
 }
 
+.pizza-card:hover {
+    transform: translateY(-5px);
+}
 
-.gridjs-tr:hover {
-    background-color: #f4fbf7;
+.pizza-card h3 {
+    margin: 0 0 10px;
+}
+
+.pizza-card p {
+    margin: 4px 0;
 }

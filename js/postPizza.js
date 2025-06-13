@@ -10,12 +10,13 @@ document.getElementById("pizza-form").addEventListener("submit", function (e) {
   };
 
   fetch("https://pizzaapp-jm2x.onrender.com/accounts/post", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  })
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
+
   .then(res => {
     if (res.ok) {
       document.getElementById("result-msg").textContent = "Pizza order submitted!";
